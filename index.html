@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiPro — Orçamentos</title>
+</head>
+<body>
+    <header>
+        <h1>ServiPro</h1>
+
+        <nav aria-label="Navegação principal">
+            <ul>
+                <li><a href="index.html" aria-current="page">Orçamentos</a></li>
+                <li><a href="pages/cadastro.html">Novo orçamento</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section aria-labelledby="titulo-orcamentos">
+            <h2 id="titulo-orcamentos">Meus orçamentos</h2>
+            <p>Organize suas propostas e acompanhe cada serviço.</p>
+            <a href="pages/cadastro.html">Novo orçamento</a>
+
+            <section aria-labelledby="titulo-resumo">
+                <h3 id="titulo-resumo">Resumo</h3>
+
+                <dl>
+                    <dt>Total de orçamentos</dt>
+                    <dd>3</dd>
+
+                    <dt>Pendentes</dt>
+                    <dd>1</dd>
+
+                    <dt>Aprovados</dt>
+                    <dd>1</dd>
+
+                    <dt>Recusados</dt>
+                    <dd>1</dd>
+                </dl>
+            </section>
+
+            <section aria-labelledby="titulo-pesquisa">
+                <h3 id="titulo-pesquisa">Pesquisar e organizar</h3>
+
+                <form>
+                    <div>
+                        <label for="pesquisa">Pesquisar:</label>
+                        <input
+                            type="search"
+                            id="pesquisa"
+                            name="pesquisa"
+                            placeholder="Nome do cliente ou serviço"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="filtro-status">Status:</label>
+                        <select id="filtro-status" name="status">
+                            <option value="">Todos os status</option>
+                            <option value="pendente">Pendente</option>
+                            <option value="aprovado">Aprovado</option>
+                            <option value="recusado">Recusado</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="ordenacao">Ordenar por:</label>
+                        <select id="ordenacao" name="ordenacao">
+                            <option value="mais-recentes">Mais recentes</option>
+                            <option value="mais-antigos">Mais antigos</option>
+                            <option value="menor-valor">Menor valor</option>
+                            <option value="maior-valor">Maior valor</option>
+                        </select>
+                    </div>
+
+                    <button type="button">Pesquisar</button>
+                </form>
+            </section>
+
+            <section aria-labelledby="titulo-listagem">
+                <h3 id="titulo-listagem">Orçamentos cadastrados</h3>
+
+                <table>
+                    <caption>Lista de orçamentos com dados fictícios</caption>
+
+                    <thead>
+                        <tr>
+                            <th scope="col">Cliente</th>
+                            <th scope="col">Serviço</th>
+                            <th scope="col">Data</th>
+                            <th scope="col">Valor</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <th scope="row">Ana Souza</th>
+                            <td>Pintura de sala</td>
+                            <td><time datetime="2026-10-03">03/10/2026</time></td>
+                            <td>R$ 850,00</td>
+                            <td>Pendente</td>
+                            <td>
+                                <a href="pages/detalhes.html">Ver detalhes</a>
+                                <button type="button">Editar</button>
+                                <button type="button">Excluir</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">Carlos Lima</th>
+                            <td>Instalação elétrica</td>
+                            <td><time datetime="2026-10-02">02/10/2026</time></td>
+                            <td>R$ 1.200,00</td>
+                            <td>Aprovado</td>
+                            <td>
+                                <button type="button">Ver detalhes</button>
+                                <button type="button">Editar</button>
+                                <button type="button">Excluir</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">Marina Costa</th>
+                            <td>Reparo hidráulico</td>
+                            <td><time datetime="2026-10-01">01/10/2026</time></td>
+                            <td>R$ 350,00</td>
+                            <td>Recusado</td>
+                            <td>
+                                <button type="button">Ver detalhes</button>
+                                <button type="button">Editar</button>
+                                <button type="button">Excluir</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>3 orçamentos cadastrados.</p>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <p>ServiPro — Desenvolvido por Bernardo Alves Nogueira.</p>
+    </footer>
+</body>
+</html>
