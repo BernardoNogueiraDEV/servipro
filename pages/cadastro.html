@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiPro — Novo orçamento</title>
+</head>
+<body>
+    <header>
+        <h1>ServiPro</h1>
+
+        <nav aria-label="Navegação principal">
+            <ul>
+                <li><a href="../index.html">Orçamentos</a></li>
+                <li><a href="cadastro.html" aria-current="page">Novo orçamento</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <a href="../index.html">Voltar para orçamentos</a>
+
+        <section aria-labelledby="titulo-cadastro">
+            <h2 id="titulo-cadastro">Novo orçamento</h2>
+            <p>Preencha os dados para criar uma proposta.</p>
+
+            <form>
+                <fieldset>
+                    <legend>Dados do cliente</legend>
+
+                    <div>
+                        <label for="cliente">Nome do cliente:</label>
+                        <input
+                            type="text"
+                            id="cliente"
+                            name="cliente"
+                            placeholder="Ex.: Ana Souza"
+                            required
+                        >
+                    </div>
+
+                    <div>
+                        <label for="telefone">Telefone:</label>
+                        <input
+                            type="tel"
+                            id="telefone"
+                            name="telefone"
+                            placeholder="Ex.: (31) 99999-1234"
+                            required
+                        >
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Endereço</legend>
+
+                    <div>
+                        <label for="cep">CEP:</label>
+                        <input
+                            type="text"
+                            id="cep"
+                            name="cep"
+                            inputmode="numeric"
+                            maxlength="9"
+                            placeholder="Ex.: 32000-000"
+                            required
+                        >
+                        <button type="button">Buscar CEP</button>
+                    </div>
+
+                    <div>
+                        <label for="rua">Rua:</label>
+                        <input
+                            type="text"
+                            id="rua"
+                            name="rua"
+                            placeholder="Ex.: Rua das Flores"
+                            required
+                        >
+                    </div>
+
+                    <div>
+                        <label for="numero">Número:</label>
+                        <input
+                            type="text"
+                            id="numero"
+                            name="numero"
+                            placeholder="Ex.: 120 ou S/N"
+                            required
+                        >
+                    </div>
+
+                    <div>
+                        <label for="complemento">Complemento:</label>
+                        <input
+                            type="text"
+                            id="complemento"
+                            name="complemento"
+                            placeholder="Ex.: Apartamento 101"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="bairro">Bairro:</label>
+                        <input type="text" id="bairro" name="bairro" required>
+                    </div>
+
+                    <div>
+                        <label for="cidade">Cidade:</label>
+                        <input type="text" id="cidade" name="cidade" required>
+                    </div>
+
+                    <div>
+                        <label for="estado">Estado:</label>
+                        <select id="estado" name="estado" required>
+                            <option value="">Selecione</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Dados do serviço</legend>
+
+                    <div>
+                        <label for="descricao">Descrição do serviço:</label>
+                        <textarea
+                            id="descricao"
+                            name="descricao"
+                            rows="4"
+                            placeholder="Descreva o serviço que será realizado."
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div>
+                        <label for="valor">Valor do orçamento (R$):</label>
+                        <input
+                            type="number"
+                            id="valor"
+                            name="valor"
+                            min="0"
+                            step="0.01"
+                            placeholder="850.00"
+                            required
+                        >
+                    </div>
+
+                    <div>
+                        <label for="data">Data do orçamento:</label>
+                        <input type="date" id="data" name="data" required>
+                    </div>
+
+                    <div>
+                        <label for="status">Status:</label>
+                        <select id="status" name="status" required>
+                            <option value="pendente">Pendente</option>
+                            <option value="aprovado">Aprovado</option>
+                            <option value="recusado">Recusado</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="observacoes">Observações:</label>
+                        <textarea
+                            id="observacoes"
+                            name="observacoes"
+                            rows="3"
+                            placeholder="Informações adicionais sobre o orçamento."
+                        ></textarea>
+                    </div>
+                </fieldset>
+
+                <a href="../index.html">Cancelar</a>
+                <button type="button">Salvar orçamento</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>ServiPro — Desenvolvido por Bernardo Alves Nogueira.</p>
+    </footer>
+</body>
+</html>
