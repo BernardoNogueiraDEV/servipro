@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ServiPro — Detalhes do orçamento</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
     <header>
-        <h1>ServiPro</h1>
+        <h1><a class="brand" href="../index.html"><span aria-hidden="true">S</span>ServiPro</a></h1>
 
         <nav aria-label="Navegação principal">
             <ul>
@@ -17,8 +19,8 @@
         </nav>
     </header>
 
-    <main>
-        <a href="../index.html">Voltar para orçamentos</a>
+    <main id="conteudo">
+        <a class="back-link" href="../index.html">← Voltar para orçamentos</a>
 
         <article aria-labelledby="titulo-detalhes">
             <header>
@@ -34,11 +36,11 @@
                 <h3 id="titulo-resumo">Resumo do orçamento</h3>
 
                 <dl>
-                    <dt>Serviço</dt>
-                    <dd>Pintura de sala</dd>
+                    <div><dt>Serviço</dt>
+                    <dd>Pintura de sala</dd></div>
 
-                    <dt>Valor do orçamento</dt>
-                    <dd>R$ 850,00</dd>
+                    <div><dt>Valor do orçamento</dt>
+                    <dd>R$ 850,00</dd></div>
                 </dl>
             </section>
 
@@ -46,11 +48,11 @@
                 <h3 id="titulo-cliente">Dados do cliente</h3>
 
                 <dl>
-                    <dt>Nome do cliente</dt>
-                    <dd>Ana Souza</dd>
+                    <div><dt>Nome do cliente</dt>
+                    <dd>Ana Souza</dd></div>
 
-                    <dt>Telefone</dt>
-                    <dd>(31) 99999-1234</dd>
+                    <div><dt>Telefone</dt>
+                    <dd>(31) 99999-1234</dd></div>
                 </dl>
             </section>
 
@@ -58,26 +60,26 @@
                 <h3 id="titulo-endereco">Endereço</h3>
 
                 <dl>
-                    <dt>CEP</dt>
-                    <dd>32000-000</dd>
+                    <div><dt>CEP</dt>
+                    <dd>32000-000</dd></div>
 
-                    <dt>Rua</dt>
-                    <dd>Rua das Flores</dd>
+                    <div><dt>Rua</dt>
+                    <dd>Rua das Flores</dd></div>
 
-                    <dt>Número</dt>
-                    <dd>120</dd>
+                    <div><dt>Número</dt>
+                    <dd>120</dd></div>
 
-                    <dt>Complemento</dt>
-                    <dd>Não informado</dd>
+                    <div><dt>Complemento</dt>
+                    <dd>Não informado</dd></div>
 
-                    <dt>Bairro</dt>
-                    <dd>Centro</dd>
+                    <div><dt>Bairro</dt>
+                    <dd>Centro</dd></div>
 
-                    <dt>Cidade</dt>
-                    <dd>Contagem</dd>
+                    <div><dt>Cidade</dt>
+                    <dd>Contagem</dd></div>
 
-                    <dt>Estado</dt>
-                    <dd>Minas Gerais — MG</dd>
+                    <div><dt>Estado</dt>
+                    <dd>Minas Gerais — MG</dd></div>
                 </dl>
             </section>
 
@@ -85,16 +87,16 @@
                 <h3 id="titulo-servico">Dados do serviço</h3>
 
                 <dl>
-                    <dt>Descrição do serviço</dt>
-                    <dd>Pintura das paredes e do teto da sala.</dd>
+                    <div><dt>Descrição do serviço</dt>
+                    <dd>Pintura das paredes e do teto da sala.</dd></div>
 
-                    <dt>Data do orçamento</dt>
+                    <div><dt>Data do orçamento</dt>
                     <dd>
                         <time datetime="2026-10-03">03/10/2026</time>
-                    </dd>
+                    </dd></div>
 
-                    <dt>Status</dt>
-                    <dd>Pendente</dd>
+                    <div><dt>Status</dt>
+                    <dd><span class="badge pending">Pendente</span></dd></div>
                 </dl>
             </section>
 
@@ -105,10 +107,11 @@
 
             <footer>
                 <button type="button">Editar orçamento</button>
-                <button type="button">Excluir orçamento</button>
+                <button class="danger" type="button">Excluir orçamento</button>
                 <a href="../index.html">Voltar</a>
             </footer>
         </article>
+        <p class="notice" id="aviso-prototipo"><strong>Protótipo · Etapa 2</strong> Dados fictícios. Cadastro, pesquisa, filtros, ordenação, busca de CEP, edição e exclusão serão implementados em uma próxima etapa.</p>
     </main>
 
     <footer>

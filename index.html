@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ServiPro — Orçamentos</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
     <header>
-        <h1>ServiPro</h1>
+        <h1><a class="brand" href="index.html"><span aria-hidden="true">S</span>ServiPro</a></h1>
 
         <nav aria-label="Navegação principal">
             <ul>
@@ -17,27 +19,27 @@
         </nav>
     </header>
 
-    <main>
+    <main id="conteudo">
         <section aria-labelledby="titulo-orcamentos">
             <h2 id="titulo-orcamentos">Meus orçamentos</h2>
             <p>Organize suas propostas e acompanhe cada serviço.</p>
-            <a href="pages/cadastro.html">Novo orçamento</a>
+            <a class="button primary new-budget" href="pages/cadastro.html">＋ Novo orçamento</a>
 
             <section aria-labelledby="titulo-resumo">
                 <h3 id="titulo-resumo">Resumo</h3>
 
                 <dl>
-                    <dt>Total de orçamentos</dt>
-                    <dd>3</dd>
+                    <div><dt>Total de orçamentos</dt>
+                    <dd>3</dd></div>
 
-                    <dt>Pendentes</dt>
-                    <dd>1</dd>
+                    <div><dt>Pendentes</dt>
+                    <dd>1</dd></div>
 
-                    <dt>Aprovados</dt>
-                    <dd>1</dd>
+                    <div><dt>Aprovados</dt>
+                    <dd>1</dd></div>
 
-                    <dt>Recusados</dt>
-                    <dd>1</dd>
+                    <div><dt>Recusados</dt>
+                    <dd>1</dd></div>
                 </dl>
             </section>
 
@@ -98,41 +100,41 @@
 
                     <tbody>
                         <tr>
-                            <th scope="row">Ana Souza</th>
-                            <td>Pintura de sala</td>
-                            <td><time datetime="2026-10-03">03/10/2026</time></td>
-                            <td>R$ 850,00</td>
-                            <td>Pendente</td>
-                            <td>
+                            <th scope="row" data-label="Cliente">Ana Souza</th>
+                            <td data-label="Serviço">Pintura de sala</td>
+                            <td data-label="Data"><time datetime="2026-10-03">03/10/2026</time></td>
+                            <td data-label="Valor">R$ 850,00</td>
+                            <td data-label="Status"><span class="badge pending">Pendente</span></td>
+                            <td data-label="Ações">
                                 <a href="pages/detalhes.html">Ver detalhes</a>
                                 <button type="button">Editar</button>
-                                <button type="button">Excluir</button>
+                                <button class="danger" type="button">Excluir</button>
                             </td>
                         </tr>
 
                         <tr>
-                            <th scope="row">Carlos Lima</th>
-                            <td>Instalação elétrica</td>
-                            <td><time datetime="2026-10-02">02/10/2026</time></td>
-                            <td>R$ 1.200,00</td>
-                            <td>Aprovado</td>
-                            <td>
+                            <th scope="row" data-label="Cliente">Carlos Lima</th>
+                            <td data-label="Serviço">Instalação elétrica</td>
+                            <td data-label="Data"><time datetime="2026-10-02">02/10/2026</time></td>
+                            <td data-label="Valor">R$ 1.200,00</td>
+                            <td data-label="Status"><span class="badge approved">Aprovado</span></td>
+                            <td data-label="Ações">
                                 <button type="button">Ver detalhes</button>
                                 <button type="button">Editar</button>
-                                <button type="button">Excluir</button>
+                                <button class="danger" type="button">Excluir</button>
                             </td>
                         </tr>
 
                         <tr>
-                            <th scope="row">Marina Costa</th>
-                            <td>Reparo hidráulico</td>
-                            <td><time datetime="2026-10-01">01/10/2026</time></td>
-                            <td>R$ 350,00</td>
-                            <td>Recusado</td>
-                            <td>
+                            <th scope="row" data-label="Cliente">Marina Costa</th>
+                            <td data-label="Serviço">Reparo hidráulico</td>
+                            <td data-label="Data"><time datetime="2026-10-01">01/10/2026</time></td>
+                            <td data-label="Valor">R$ 350,00</td>
+                            <td data-label="Status"><span class="badge rejected">Recusado</span></td>
+                            <td data-label="Ações">
                                 <button type="button">Ver detalhes</button>
                                 <button type="button">Editar</button>
-                                <button type="button">Excluir</button>
+                                <button class="danger" type="button">Excluir</button>
                             </td>
                         </tr>
                     </tbody>
@@ -141,6 +143,7 @@
                 <p>3 orçamentos cadastrados.</p>
             </section>
         </section>
+        <p class="notice" id="aviso-prototipo"><strong>Protótipo · Etapa 2</strong> Dados fictícios. Cadastro, pesquisa, filtros, ordenação, busca de CEP, edição e exclusão serão implementados em uma próxima etapa.</p>
     </main>
 
     <footer>

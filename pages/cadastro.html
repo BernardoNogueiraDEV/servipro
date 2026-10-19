@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ServiPro — Novo orçamento</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
     <header>
-        <h1>ServiPro</h1>
+        <h1><a class="brand" href="../index.html"><span aria-hidden="true">S</span>ServiPro</a></h1>
 
         <nav aria-label="Navegação principal">
             <ul>
@@ -17,14 +19,14 @@
         </nav>
     </header>
 
-    <main>
-        <a href="../index.html">Voltar para orçamentos</a>
+    <main id="conteudo">
+        <a class="back-link" href="../index.html">← Voltar para orçamentos</a>
 
         <section aria-labelledby="titulo-cadastro">
             <h2 id="titulo-cadastro">Novo orçamento</h2>
             <p>Preencha os dados para criar uma proposta.</p>
 
-            <form>
+            <form class="budget-form" aria-describedby="aviso-prototipo">
                 <fieldset>
                     <legend>Dados do cliente</legend>
 
@@ -54,7 +56,7 @@
                 <fieldset>
                     <legend>Endereço</legend>
 
-                    <div>
+                    <div class="cep-field">
                         <label for="cep">CEP:</label>
                         <input
                             type="text"
@@ -148,7 +150,7 @@
                 <fieldset>
                     <legend>Dados do serviço</legend>
 
-                    <div>
+                    <div class="full-width">
                         <label for="descricao">Descrição do serviço:</label>
                         <textarea
                             id="descricao"
@@ -186,7 +188,7 @@
                         </select>
                     </div>
 
-                    <div>
+                    <div class="full-width">
                         <label for="observacoes">Observações:</label>
                         <textarea
                             id="observacoes"
@@ -197,10 +199,11 @@
                     </div>
                 </fieldset>
 
-                <a href="../index.html">Cancelar</a>
-                <button type="button">Salvar orçamento</button>
+                <div class="form-actions"><a class="button" href="../index.html">Cancelar</a>
+                <button class="primary" type="button">Salvar orçamento</button></div>
             </form>
         </section>
+        <p class="notice" id="aviso-prototipo"><strong>Protótipo · Etapa 2</strong> Dados fictícios. Cadastro, pesquisa, filtros, ordenação, busca de CEP, edição e exclusão serão implementados em uma próxima etapa.</p>
     </main>
 
     <footer>
