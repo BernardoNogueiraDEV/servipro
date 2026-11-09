@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ServiPro — Novo orçamento</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/app.js" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -20,13 +21,15 @@
     </header>
 
     <main id="conteudo">
+        <p id="feedback" role="status" aria-live="polite" hidden></p>
+        <noscript>Ative o JavaScript para gerenciar seus or?amentos.</noscript>
         <a class="back-link" href="../index.html">← Voltar para orçamentos</a>
 
         <section aria-labelledby="titulo-cadastro">
             <h2 id="titulo-cadastro">Novo orçamento</h2>
             <p>Preencha os dados para criar uma proposta.</p>
 
-            <form class="budget-form" aria-describedby="aviso-prototipo">
+            <form class="budget-form">
                 <fieldset>
                     <legend>Dados do cliente</legend>
 
@@ -67,7 +70,7 @@
                             placeholder="Ex.: 32000-000"
                             required
                         >
-                        <button type="button">Buscar CEP</button>
+                        <button id="buscar-cep" type="button">Buscar CEP</button><p id="feedback-cep" role="status" aria-live="polite"></p>
                     </div>
 
                     <div>
@@ -200,10 +203,10 @@
                 </fieldset>
 
                 <div class="form-actions"><a class="button" href="../index.html">Cancelar</a>
-                <button class="primary" type="button">Salvar orçamento</button></div>
+                <button class="primary" type="submit">Salvar orçamento</button></div>
             </form>
         </section>
-        <p class="notice" id="aviso-prototipo"><strong>Protótipo · Etapa 2</strong> Dados fictícios. Cadastro, pesquisa, filtros, ordenação, busca de CEP, edição e exclusão serão implementados em uma próxima etapa.</p>
+
     </main>
 
     <footer>
