@@ -105,6 +105,42 @@ if ($('.budget-form')) {
         if (saveItems(next)) location.href = `detalhes.html?id=${encodeURIComponent(item.id)}&salvo=1`;
     });
     form.addEventListener('input', event => event.target.setCustomValidity?.(''));
+    $('#buscar-cep').addEventListener('click', async () => {
+        const cep = $('#cep').value.replace(/\D/g, '');
+        const message = $('#feedback-cep');
+        if (!/^\d{8}$/.test(cep)) {
+            message.textContent = 'Informe um CEP com 8 dígitos para pesquisar.';
+            $('#cep').focus();
+            return;
+        }
+        const button = $('#buscar-cep');
+        button.disabled = true;
+        message.textContent = 'Consultando endereço…';
+        try {
+            const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`, { signal: AbortSignal.timeout(10000) });
+            if (!response.ok) throw new Error('Falha na consulta');
+            const address = await response.json();
+            if ($('#cep').value.replace(/\D/g, '') !== cep) {
+                message.textContent = 'O CEP foi alterado. Faça uma nova consulta.';
+                return;
+            }
+            if (address.erro) {
+                message.textContent = 'CEP não encontrado. Confira o número ou preencha o endereço manualmente.';
+                return;
+            }
+            if (typeof address.localidade !== 'string' || typeof address.uf !== 'string') throw new Error('Resposta inválida');
+            Object.entries({ rua: address.logradouro || '', bairro: address.bairro || '', cidade: address.localidade, estado: address.uf }).forEach(([field, value]) => {
+                form.elements[field].value = value;
+                form.elements[field].setCustomValidity('');
+            });
+            message.textContent = 'Endereço preenchido pelo ViaCEP. Confira os dados e informe o número; complete rua e bairro se necessário.';
+            $('#numero').focus();
+        } catch {
+            message.textContent = 'Não foi possível consultar o ViaCEP. Tente novamente ou preencha o endereço manualmente.';
+        } finally {
+            button.disabled = false;
+        }
+    });
 }
 if ($('#detalhes')) {
     const item = items.find(item => item.id === id);

@@ -85,6 +85,10 @@ article > footer { display: flex; flex-wrap: wrap; gap: .75rem; padding: 1.5rem;
 article > footer > a { margin-left: auto; padding: .6rem 1rem; }
 .notice { padding: 1rem; border: 1px solid #d5d9f3; border-radius: var(--radius); background: #eeeffb; color: #454e72; font-size: .85rem; margin-top: 1.75rem; }
 .notice strong { display: block; margin-bottom: .25rem; }
+.error { border-color: #edbac0; background: #fff0f1; color: #aa2435; }
+[hidden] { display: none !important; }
+dd, td { white-space: pre-wrap; overflow-wrap: anywhere; }
+#feedback-cep { grid-column: 1 / -1; margin: 0; max-width: 50rem; }
 body > footer { padding: 1.25rem 1.5rem; text-align: center; background: white; border-top: 1px solid var(--line); font-size: .8rem; color: var(--muted); }
 body > footer p { margin: 0; }
 /* A tabela vira cartões para manter todas as informações em telas menores. */
